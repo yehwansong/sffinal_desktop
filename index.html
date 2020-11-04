@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta 
+     name='viewport' 
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
+/>
+<script
+src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+crossorigin="anonymous"></script>
+<script
+src="perfect-scrollbar.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	    $('video').on('ended', function() {
+	    	$('.selector_wrapper_wrapper').show()
+	    	if($(this).attr('id') === 'earth'){
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_1').html('어떻게 하면 좋을까?')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_1').html('태양계를 떠나 외계 행성으로 가자')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_1').removeClass().addClass('selector selector_1 newplanet')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_2').html('태양계에 머물자')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_2').removeClass().addClass('selector selector_2 spacestation')
+	    	}
+	    	if($(this).attr('id') === 'spacestation'){
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_1').html('어떻게 하면 좋을까?')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_1').html('원래대로의 인간 몸을 선택한다.')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_1').removeClass().addClass('selector selector_1 mars')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_2').html('기계 몸을 선택한다.')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_2').removeClass().addClass('selector selector_2 toreearth')
+	    	}
+	    	if($(this).attr('id') === 'mars'){
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_1').html('어떻게 하면 좋을까?')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_1').html('아들의 죽음을 선택한다.')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_1').removeClass().addClass('selector selector_1 son_die')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_2').html('아들의 생존을 선택한다.')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_2').removeClass().addClass('selector selector_2 son_robotize')
+	    	}
+	    	if($(this).attr('id') === 'newplanet'){
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_1').html('\
+	    			이 행성에는 토착생명체가 있다.\
+					지구의 공룡을 연상하게 하는 거대 동물이 지상을 활보하는 등 온갖 크고 작은 생명체가 살고 있는 것이다.\
+					게다가 샘플을 분석해 보니 이곳 동물의 생리가 지구의 동물과 매우 비슷하다. 심지어 인간과 비슷한 DNA까지 지니고 있다! 어떻게 하면 좋을까?\
+					')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_1').html('이미 자리잡고 있는 생명체의 터전을 빼앗을 수 없다. 다른 행성을 찾아 떠나야 한다.')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_1').removeClass().addClass('selector selector_1 newplanetselector')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_2').html('인간의 생존이 최우선이다. 정착해야 한다.')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_2').removeClass().addClass('selector selector_2 toanotherplanet')
+	    	}
+	    	if($(this).attr('id') === 'newplanetselector'){
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_1').html('어떻게 하면 좋을까?')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_1').html('이들이 나중에 문명을 발전시키면 인류의 적이 될 수도 있다. 아예 싹을 없애자.')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_1').removeClass().addClass('selector selector_1 coexist')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_2').html('공존을 모색해야 한다.')
+	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_2').find('.selector_2').removeClass().addClass('selector selector_2 destroy')
+	    	}
+
+
+
+	    	if($(this).attr('id') === 'toreearth'){
+					$('video').each(function() {
+					    	$(this).hide()
+					    	$(this).get(0).pause();
+					});
+	    			$('.selector_wrapper_wrapper').html('\
+	    				<div class="theend">SF스토리체험이 종료되었습니다.<br>내가 선택한 SF스토리를 확인해보세요</div>\
+	    				<br><a href="index.html" class="theend_button button">다시 체험하기</a><div class="theend_button button sum sum_toreearth">SF스토리 확인하기</div>')
+					$('.sum').click(function(){$('.result_toreearth').fadeIn(300)})
+	    	}
+	    	if($(this).attr('id') === 'son_robotize'){
+					$('video').each(function() {
+					    	$(this).hide()
+					    	$(this).get(0).pause();
+					});
+	    			$('.selector_wrapper_wrapper').html('\
+	    				<div class="theend">SF스토리체험이 종료되었습니다.<br>내가 선택한 SF스토리를 확인해보세요</div>\
+	    				<br><a href="index.html" class="theend_button button">다시 체험하기</a><div class="theend_button button sum sum_son_robotize">SF스토리 확인하기</div>')
+					$('.sum').click(function(){$('.result_son_robotize').fadeIn(300)})
+	    	}
+	    	if($(this).attr('id') === 'son_die'){
+					$('video').each(function() {
+					    	$(this).hide()
+					    	$(this).get(0).pause();
+					});
+	    			$('.selector_wrapper_wrapper').html('\
+	    				<div class="theend">SF스토리체험이 종료되었습니다.<br>내가 선택한 SF스토리를 확인해보세요</div>\
+	    				<br><a href="index.html" class="theend_button button">다시 체험하기</a><div class="theend_button button sum sum_son_die">SF스토리 확인하기</div>')
+					$('.sum').click(function(){$('.result_son_die').fadeIn(300)})
+	    	}
+	    	if($(this).attr('id') === 'coexist'){
+					$('video').each(function() {
+					    	$(this).hide()
+					    	$(this).get(0).pause();
+					});
+	    			$('.selector_wrapper_wrapper').html('\
+	    				<div class="theend">SF스토리체험이 종료되었습니다.<br>내가 선택한 SF스토리를 확인해보세요</div>\
+	    				<br><a href="index.html" class="theend_button button">다시 체험하기</a><div class="theend_button button sum sum_coexist">SF스토리 확인하기</div>')
+					$('.sum').click(function(){$('.result_coexist').fadeIn(300)})
+	    	}
+	    	if($(this).attr('id') === 'destroy'){
+					$('video').each(function() {
+					    	$(this).hide()
+					    	$(this).get(0).pause();
+					});
+	    			$('.selector_wrapper_wrapper').html('\
+	    				<div class="theend">SF스토리체험이 종료되었습니다.<br>내가 선택한 SF스토리를 확인해보세요</div>\
+	    				<br><a href="index.html" class="theend_button button">다시 체험하기</a><div class="theend_button button sum sum_destroy">SF스토리 확인하기</div>')
+					$('.sum').click(function(){$('.result_destroy').fadeIn(300)})
+	    	}
+	    	if($(this).attr('id') === 'toanotherplanet'){
+					$('video').each(function() {
+					    	$(this).hide()
+					    	$(this).get(0).pause();
+					});
+	    			$('.selector_wrapper_wrapper').html('\
+	    				<div class="theend">SF스토리체험이 종료되었습니다.<br>내가 선택한 SF스토리를 확인해보세요</div>\
+	    				<br><a href="index.html" class="theend_button button">다시 체험하기</a><div class="theend_button button sum sum_toanotherplanet">SF스토리 확인하기</div>')
+	    			$('.sum').click(function(){$('.result_toanotherplanet').fadeIn(300)})
+	    	}
+
+	    })
+	    $('.result_close').click(function(){
+	    	$('.result').hide()
+	    })
+
+	    $('.selector').click(function(){
+	    	var selectedvideo = $(this).attr('class').split(' ')[2]
+	    	$('.selector_wrapper_wrapper').fadeOut(300)
+			$('video').each(function() {
+				if($(this).attr('id') != selectedvideo){
+			    	$(this).hide()
+			    	$(this).get(0).pause();
+				}else{
+			    	$(this).show()
+			    	$(this).get(0).play()
+				}
+			});
+	    })
+
+	    $('.meth').click(function(){
+	    	$('.popup').show()
+	    })
+	    $('.start').click(function(){
+	    	$('.title_wrap').hide()
+			$('video').hide()
+			$('#earth').show()
+			$('#earth')[0].play()
+	    })
+	    $('.popup .close').click(function(){
+	    	$('.popup').hide()
+	    })
+	    $('.result').perfectScrollbar();
+	})
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+video{
+	width: 600px;
+	height: 900px;
+	position: absolute;
+}
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', 'Noto Sans KR',  san-serif;
+	box-sizing: border-box;
+	word-break: keep-all;
+}
+.selector_wrapper_wrapper{
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    background: black;
+    left: 0;
+    top: 0;
+    color: white;
+    font-size: 22.5px;
+    text-align: center;
+    line-height: 1.5;
+    box-shadow: 0vh 0vh 0vh 100vw black;
+    display: none;
+    top: 400px;
+    transform: translateY(-50%);
+    padding: 20px;
+}
+#wrapper{
+    overflow: hidden;
+    position: relative;
+    width: 600px;
+    height: 900px;
+}
+.selector{
+    width: 240px;
+    display: block;
+    border: 2px solid white;
+    padding: 10px;
+    /*border-radius: 10px;*/
+    margin: 40px;
+    /*height: 85px;*/
+    margin-top: 20px;
+    background: black;
+    cursor: pointer;
+}
+.selector:hover{
+	filter: invert();
+}
+.selector_1{
+    left: 25px;
+    margin-right: 0
+}
+.selector_wrapper_1,
+.selector_wrapper_2{
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.selector_wrapper_1{
+    position: relative;
+}
+.selector_wrapper_2{
+	display: flex;
+    position: relative;
+}
+.title_wrap{
+    background-image: url(vid/intro_top-01.png),url(vid/intro_mid-01.png),url(vid/intro_bot-01.png);
+    background-position: top,center,bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+.popup{
+    position: absolute;
+    z-index: 10000;
+    /* width: 100%; */
+    /* height: 100%; */
+    z-index: 10000;
+    color: white;
+    width: 75%;
+    /* font-size: 3vw; */
+    color: white;
+    font-size: 22.5px;
+    text-align: center;
+    line-height: 1.5;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 47.5%;
+    display: none;
+    background: black;
+    padding: 20px;
+    border: 1px solid white;  
+}
+.title_innerwrap{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    font-size: 22.5px;
+}
+.title_innerwrap>span{
+	display: block;
+}
+.title{
+    font-size: 48px;}
+
+.button{
+    /* transform: translateX(10px); */
+    border: 2px solid white;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 1vw;
+    padding: 9px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 1.5px;
+    background: black;
+    color: white;
+    /* box-shadow: 0vh 0vh 1px 0vh black; */
+    font-size: 22.5px;
+    display: inline-block;
+    width: 25%;
+    /* clear: both; */
+    margin: 0;
+    float: left;
+    pointer-events: auto;
+    top: 50%;
+    position: relative;
+    left: 50%;
+    cursor: pointer;
+}
+.button:hover{
+	filter: invert(1);
+}
+.meth{
+    transform: translateX(-100%) translateX(-5px);
+}
+.start{transform: translateX(-100%) translateX(5px);}
+.close{
+    
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10vw;
+    height: 10vw;
+    display: block;
+    left: auto;
+    transform: none;
+    /* background: white; */
+    z-index: 10000000000;
+    /* display: none; */
+    background: white;
+    border: 5px solid white;
+    width: 30px;
+    height: 30px;
+}
+.theend{
+    top: 10px;
+    position: relative;}
+    .theend_button{
+    transform: translateX(-50%);
+    width: 300px;
+}
+.sum{
+    margin-top: 10px;
+}
+.result{
+    display: block;
+    z-index: 1000000;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    overflow: hidden;
+    display: none;
+}
+.result .box {
+    margin-top: 50px;
+    width: 250px;
+    /* height: 42vw; */
+    float: left;
+    position: relative;
+    left: 40px;
+    margin-bottom: 50px;
+    border: 1px solid;
+}
+.inner_img{
+    height: 252px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.result .box:nth-child(2n) {
+    transform: translateY(50%);
+}
+.result .box span{
+    text-align: center;
+    position: relative;
+    display: block;
+    background: rgba(255, 255, 255, 1);
+    padding: 7.5px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    font-size: 20px;
+    color: black;
+    padding-bottom: 5px;
+}
+.result_close{
+    position: fixed;
+    display: block;
+    pointer-events: all;
+    left: 570px;
+    top: 0;
+}
+</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="title_wrap">
+			<span class="title_innerwrap">
+				<span class="title">SF스토리 체험</span>
+				<span class="credit">고호관 작가 & 송예환 디자이너</span><br>
+			</span>
+			<!-- 체험방법 -->
+			<a class="button meth">체험 방법</a>
+			<a class="button start">시작하기</a>
+		</div>
+		<div class=popup>
+			<img src="vid/close.png" class="close">
+			영상을 따라가다 만나는 결정적인 순간에 만드는 선택에 따라 이야기의 결론이 달라지는 SF 스토리 체험입니다. 모바일 기기에 최적화 된 사이트입니다. 스마트폰을 이용해 접속해보세요. 
+		</div>
+		<video controls="" id="toreearth">
+		<source src="vid/tore-earth.mp4" type="video/mp4">
+		</video>
+		<video controls="" id="coexist">
+		<source src="vid/coexist.mp4" type="video/mp4">
+		</video>
+		<video controls="" id="destroy">
+		<source src="vid/destroy.mp4" type="video/mp4">
+		</video>
+		<video controls="" id="earth">
+		<source src="vid/earth.mp4" type="video/mp4">
+		</video>
+		<video controls="" id="mars">
+		<source src="vid/mars.mp4" type="video/mp4">
+		</video>
+		<video controls="" id="newplanet_selector">
+		<source src="vid/newplanet_selector.mp4" type="video/mp4">
+		</video>
+		<video controls="" id="newplanet">
+		<source src="vid/newplanet.mp4" type="video/mp4">
+		</video>
+		<video controls="" id="son_die">
+		<source src="vid/son_die.mp4" type="video/mp4">
+		</video>
+		<video controls="" id="son_robotize">
+		<source src="vid/son_robotize.mp4" type="video/mp4">
+		</video>
+		<video controls="" id="spacestation">
+		<source src="vid/spacestation.mp4" type="video/mp4">
+		</video>
+		<video controls="" id="toanotherplanet">
+		<source src="vid/toanotherplanet.mp4" type="video/mp4">
+		</video>
+		<div class='selector_wrapper_wrapper earth'>
+			<div class="selector_wrapper_1">
+				어떻게 하면 좋을까?
+			</div>
+			<div class="selector_wrapper_2">
+                <a class="selector selector_1 newplanet">태양계를 떠나 외계 행성으로 가자</a>
+                <a class="selector selector_2 spacestation">태양계에 머물자</a>
+            </div>
+		</div>
+
+
+	    	
+	    			<div class="result result_toanotherplanet">
+				        <img src="vid/close.png" class="close result_close">
+						<div class="box_wrapper">
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_com/1.PNG)"></div>
+						<span>2120년, 지구에서 살던 나는</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_com/2.PNG)"></div>
+						<span>서윤을 따라 외계행성으로 떠났다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_com/3.PNG)"></div>
+						<span>외계행성에 도착해 확인해보니</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_com/4.PNG)"></div>
+						<span>지구와 환경이 유사한 곳이었지만 다른 생명체의 터전이었다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_com/5.PNG)"></div>
+						<span>나는 다른 생명체의 터전을 뺏지 않고 다른 행성을 찾아 나서기로 결정했다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_com/6.PNG)"></div>
+						<span>하지만 그렇게 찾은 행성은</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_com/7.PNG)"></div>
+						<span>정착하기에 적합하지 않았다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_com/8.PNG)"></div>
+						<span>다시 우주를 방랑하던 중</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_com/9.PNG)"></div>
+						<span>지구를 떠나온 준을 만났고</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_com/10.PNG)"></div>
+						<span>준처럼 몸을 기계로 바꾸고 의식은 준와 융합했다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_com/11.PNG)"></div>
+							<span>나와 준은 함께 다른 지성 종족을 찾아 여행을 떠난다.</span>
+						</div>
+						</div>
+					</div>
+
+
+	    			<div class="result result_coexist">
+			        	<img src="vid/close.png" class="close result_close">
+				        <div class="result_arrow result_arrow_up"></div>
+				        <div class="result_arrow result_arrow_down"></div>
+						<div class="box_wrapper">
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_co/1.PNG)"></div>
+							<span>2120년, 지구에서 살던 나는</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_co/2.PNG)"></div>
+							<span>서윤을 따라 외계행성으로 떠났다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_co/3.PNG)"></div>
+							<span>외계행성에 도착해 확인해보니</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_co/4.PNG)"></div>
+							<span>지구와 환경이 유사한 곳이었지만, 다른 생명체의 터전이었다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_co/5.PNG)"></div>
+							<span>하지만 나는 그대로 정착하기로 결정한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_co/6.PNG)"></div>
+							<span>그리고 토착 생명체 중 하나가 지적 능력을 보인다는 것을 알게 되었고<br>이들을 보호하며 지식을 가르친다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_co/7.PNG)"></div>
+							<span>언제까지 이들과의 평화로운 공존이 가능할까?<br>우리 인류의 노력에 달려 있다.</span>
+						</div>
+						</div>
+					</div>
+
+
+
+	    			<div class="result result_destroy">
+			        	<img src="vid/close.png" class="close result_close">
+				        <div class="result_arrow result_arrow_up"></div>
+				        <div class="result_arrow result_arrow_down"></div>
+						<div class="box_wrapper">
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_des/1.PNG)"></div>
+							<span>2120년, 지구에서 살던 나는</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_des/2.PNG)"></div>
+							<span>서윤을 따라 외계행성으로 떠났다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_des/3.PNG)"></div>
+							<span>외계행성에 도착해 확인해보니</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_des/4.PNG)"></div>
+							<span>지구와 환경이 유사한 곳이었지만, 다른 생명체의 터전이었다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_des/5.PNG)"></div>
+							<span>하지만 나는 그대로 정착하기로 결정한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_des/6.PNG)"></div>
+							<span>그리고 토착 생명체 중 하나가 지적 능력을 보인다는 것을 알게 되었지만<br>우리는 인류의 생존을 최우선으로 생각해 도시를 건설한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_des/7.PNG)"></div>
+							<span>그 결과 이들 토착 생명체는 점점 수가 줄어들고, 시간이 지날수록 생태계가 무너진다.<br>인류는 이 먼 곳까지 와서 지구에서와 똑같은 실수를 한 것이다.</span>
+						</div>
+						</div>
+					</div>
+
+
+
+	    			<div class="result result_son_robotize">
+			        	<img src="vid/close.png" class="close result_close">
+			        	<div class="result_arrow result_arrow_up"></div>
+				        <div class="result_arrow result_arrow_down"></div>
+						<div class="box_wrapper">
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_alive/1.PNG)"></div>
+							<span>2120년, 지구에서 살던 나는</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_alive/2.PNG)"></div>
+							<span>준을 따라 태양계에 남기로 결정한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_alive/3.PNG)"></div>
+							<span>우주정거장에서 지구 복원 작업을 하던 나는 우주 쓰레기에 맞는 사고를 당한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_alive/4.PNG)"></div>
+							<span>미래의 기술로 치료를 받고자 동면에 들어갔지만, 깨어나 보니 납치를 당한 상태다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_alive/5.PNG)"></div>
+							<span>이때 준의 도움으로 탈출하고</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_alive/6.PNG)"></div>
+							<span>인간으로 남아 화성으로 가기로 한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_alive/7.PNG)"></div>
+							<span>소행성대 출신 여성을 만나 결혼하고</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_alive/8.PNG)"></div>
+							<span>아들을 낳지만 </span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_alive/9.PNG)"></div>
+							<span>아들은 우주에서 사고를 당하고</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_alive/10.PNG)"></div>
+							<span>나는 아들을 살리기 위해 기계로 만들기로 결정한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_alive/11.PNG)"></div>
+							<span>디지털 의식이 된 아들은 점점 나와 다른 존재가 되어간다.<br>나는 새로운 방향으로 진화하는 인류의 미래를 상상하며 늙을 때까지 아들 곁에서 지낸다.</span>
+						</div>
+						</div>
+					</div>
+
+	    			<div class="result result_son_die">
+			        	<img src="vid/close.png" class="close result_close">
+			        	<div class="result_arrow result_arrow_up"></div>
+				        <div class="result_arrow result_arrow_down"></div>
+						<div class="box_wrapper">
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_death/1.PNG)"></div>
+							<span>2120년, 지구에서 살던 나는</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_death/2.PNG)"></div>
+							<span>준을 따라 태양계에 남기로 결정한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_death/3.PNG)"></div>
+							<span>우주정거장에서 지구 복원 작업을 하던 나는 우주 쓰레기에 맞는 사고를 당한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_death/4.PNG)"></div>
+							<span>미래의 기술로 치료를 받고자 동면에 들어갔지만, 깨어나 보니 납치를 당한 상태다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_death/5.PNG)"></div>
+							<span>이때 준의 도움으로 탈출하고</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_death/6.PNG)"></div>
+							<span>인간으로 남아 화성으로 가기로 한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_death/7.PNG)"></div>
+							<span>소행성대 출신 여성을 만나 결혼하고</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_death/8.PNG)"></div>
+							<span>아들을 낳지만 </span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_death/9.PNG)"></div>
+							<span>아들은 우주에서 사고를 당하고</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_death/10.PNG)"></div>
+							<span>소행성대의 문화에 따라<br>아들의 죽음을 받아들이기로 결정한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_death/11.PNG)"></div>
+							<span>나는 슬프면서도 진취적이고 우주를 두려워하지 않는 인류의 미래에 희망을 갖는다.</span>
+						</div>
+						</div>
+					</div>
+
+
+	    			<div class="result result_toreearth">
+			        	<img src="vid/close.png" class="close result_close">
+			        	<div class="result_arrow result_arrow_up"></div>
+				        <div class="result_arrow result_arrow_down"></div>
+						<div class="box_wrapper">
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_sp/1.PNG)"></div>
+							<span>2120년, 지구에서 살던 나는</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_sp/2.PNG)"></div>
+							<span>준을 따라 태양계에 남기로 결정한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_sp/3.PNG)"></div>
+							<span>우주정거장에서 지구 복원 작업을 하던 나는 우주 쓰레기에 맞는 사고를 당한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_sp/4.PNG)"></div>
+							<span>미래의 기술로 치료를 받고자 동면에 들어갔지만, 깨어나 보니 납치를 당한 상태다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_sp/5.PNG)"></div>
+							<span>준의 도움으로 탈출하고</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_sp/6.PNG)"></div>
+							<span>준을 따라 기계가 되기로 결정한다.</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_sp/7.PNG)"></div>
+							<span>기계가 되어 지구로 다시 돌아가</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_sp/8.PNG)"></div>
+							<span>변한 지구를 둘러보던 중 태양계를 찾아왔던 외계인의 존재를 알게 되고</span>
+						</div>
+						<div class="box">
+							<div class="inner_img" style="background-image : url(result_sp/9.PNG)"></div>
+							<span>외계인을 찾아 심우주를 탐사하러 떠난다.</span>
+						</div>
+						</div>
+					</div>
+	</div>
+</body>
+</html>
