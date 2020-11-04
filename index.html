@@ -14,6 +14,7 @@ src="perfect-scrollbar.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 	    $('video').on('ended', function() {
+	    	console.log($(this).attr('id'))
 	    	$('.selector_wrapper_wrapper').show()
 	    	if($(this).attr('id') === 'earth'){
 	    		$('.selector_wrapper_wrapper').find('.selector_wrapper_1').html('어떻게 하면 좋을까?')
@@ -126,6 +127,7 @@ src="perfect-scrollbar.js"></script>
 	    $('.selector').click(function(){
 	    	var selectedvideo = $(this).attr('class').split(' ')[2]
 	    	$('.selector_wrapper_wrapper').fadeOut(300)
+	    	console.log(selectedvideo)
 			$('video').each(function() {
 				if($(this).attr('id') != selectedvideo){
 			    	$(this).hide()
@@ -413,7 +415,7 @@ video{
 		<video controls="" id="mars">
 		<source src="vid/mars.mp4" type="video/mp4">
 		</video>
-		<video controls="" id="newplanet_selector">
+		<video controls="" id="newplanetselector">
 		<source src="vid/newplanet_selector.mp4" type="video/mp4">
 		</video>
 		<video controls="" id="newplanet">
